@@ -1,5 +1,6 @@
 from game_logic import *
 from importlib import import_module as load
+from pprint import pprint
 
 SIZE = 4		# Size of the board
 
@@ -7,7 +8,7 @@ PLAYERS = [
 			'random_player',
 			'rush_player',
 			'minimax_player',
-			'madeup_player'
+			# 'madeup_player'
 			]
 
 #TODO: MAX_TIME Not implemented yet
@@ -51,6 +52,7 @@ def fight(player1, player2):
 
 	val = game.winner() == WHITE
 	fightLog(player1, player2, player1 if val else player2)
+	# pprint(game.board)
 	return val
 
 def tourney():

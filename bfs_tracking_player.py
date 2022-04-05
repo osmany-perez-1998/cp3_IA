@@ -31,20 +31,10 @@ from minimax import minimax
 #			print(nx, ny)
 
 
-def play(game:Game, player):
+def play(game, player):
 	# Code Here
 	# Random player implementation (just delete it)
-    # current_score = -1
-    # move = None
-    # for x,y in moves(game, player):
-    #     game1 = game.clone_play(x,y)
 
-    #     heur = heuristic(game1,player)
-    #     if heur <current_score or current_score ==-1:
-    #         current_score = heur
-    #         move = (x,y)
-
-    # return move
 	return minimax(game, player, 3, heuristic, moves)
 
 
@@ -55,25 +45,6 @@ def moves(game, player):
 				yield (x, y)
 
 
-def heuristic(game:Game, player):
-    rel_compo = 1
-    empty_lines = 0
-    
-    for i in range(game.size):
+def heuristic(game, player):
+	return 0
 
-        free_line = True
-        for j in range(game.size):
-            # Swap if B is playing in order to search by rows, not columns
-            x,y = i,j
-            if player == PLAYER[1]:
-                x,y=y,x
-
-            if game[x,y] == player:
-                free_line = False
-
-                if game.ds[game.position(x,y)] == -1:
-                    rel_compo += 1        
-        
-        empty_lines+=free_line 
-
-    return empty_lines - (1/rel_compo)
