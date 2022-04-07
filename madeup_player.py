@@ -43,8 +43,14 @@ def play(game:Game, player):
     #     if heur <current_score or current_score ==-1:
     #         current_score = heur
     #         move = (x,y)
+<<<<<<< HEAD
     # return move
     return minimax(game, player, 3, heuristic, moves)
+=======
+
+    # return move
+	return minimax(game, player, 3, heuristic, moves)
+>>>>>>> 9decd19a173f13c784f8bbc3496919d4a748511c
 
 
 def moves(game, player):
