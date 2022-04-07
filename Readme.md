@@ -1,7 +1,7 @@
 # HEX
 
 Osmany Pérez Rodríguez C512
-Richard García de la Osa C512
+Richard García De la Osa C512
 
 ### Juego
 
@@ -15,15 +15,15 @@ Un nodo es un estado del tablero, o sea representa los detalles actuales del jue
 
 ### Arista
 
-La arista representa la jugada realizada. Es el cambio que se lleva a cabo para cambiar de un estado a otro, que a su vez son los nodos. Estas transiciones están dadas por la inserción de una ficha en una coordenada específica, tanto blanca como negra en dependencia de a que jugador le toca. Además, es necesario recordar que es un grafo dirigido ya que una jugada no se puede deshacer y no hay forma que un nodo ancestro pueda ser igual que el actual.
+La arista representa la jugada realizada. Es el cambio que se lleva a cabo para ir de un estado a otro, que a su vez son los nodos. Estas transiciones están dadas por la inserción de una ficha en una coordenada específica, tanto blanca como negra en dependencia de a que jugador le toca. Además, es necesario recordar que es un grafo dirigido ya que una jugada no se puede deshacer y no hay forma que un nodo ancestro pueda ser igual que el actual.
 
 ### Camino
 
-Un camino es una secuencia de estados que están unidos por aristas cuyo inicio es el nodo inicial del juego y el último es un estado terminal del mismo. Es una serie de moviminetos que concluye con un ganador.
+Un camino es una secuencia de estados que están unidos por aristas cuyo inicio es el nodo inicial del juego y el último es un estado final del mismo. Es una serie de moviminetos que concluye con un ganador.
 
 ### Jugada
 
-Una jugada es el movimiento que se realiza una vez que se encuentra el movimiento óptimo cuando se analiza los posibles estados del juego en profundidad. Y a vez es la hace el cambio de estado en la partida.
+Una jugada es el movimiento que se realiza una vez que se encuentra el movimiento óptimo cuando se analiza los posibles estados del juego en profundidad y a la vez es la hace el cambio de estado en la partida.
 
 ### Jugador
 
@@ -31,7 +31,7 @@ El jugador es el encargado del análisis del tablero actual en busca de la jugad
 
 ### Heurística
 
-La heurística es básicamente un recorrido de BFS modifcado para analizar ciertas sitaciones del juego. 
+La heurística es básicamente un recorrido de BFS modifcado para analizar ciertas situaciones del juego. 
 
 Analizar el jugador $W$ (blanco) es análogo a analizar el jugador negro teniendo en cuenta que uno tiene como objetivo insertar un camino que lo lleve de izquierda a derecha en el tablero y el otro de arriba hacia abajo.
 
@@ -43,8 +43,8 @@ Una vez iniciado el ciclo del BFS, se extrae el primer elemento de la cola y se 
 
 De esta manera se logra encontrar una distancia mínima de un extremo al otro, que se traduce a la cantidad de jugadas como mínimo necesarias para ganar.
 
-La heurística entonces devuelve 1 - (distancia / $n^2$) ya que de esta forma a menor distancia se le otorga mayor valor. Se toma como denominador $n^2$ para asegurar que el valor es menor que 1, dado que no puede haber una distancia mayor que la cantidad de casillas del tablero. Entonces la métrica en retorna valores entre 0 y 1.
+La heurística entonces devuelve 1 - (distancia / $n^2$) ya que de esta forma a menor distancia se le otorga mayor valor. Se toma como denominador $n^2$ para asegurar que el valor es menor que 1, dado que no puede haber una distancia mayor que la cantidad de casillas del tablero. Entonces la métrica retorna valores entre 0 y 1.
 
 ### Archivo
 
-minimax_player.py
+madeup_minimax.py
