@@ -34,17 +34,17 @@ from minimax import minimax
 def play(game:Game, player):
 	# Code Here
 	# Random player implementation (just delete it)
-    current_score = -1
-    move = None
-    for x,y in moves(game, player):
-        game1 = game.clone_play(x,y)
+    # current_score = -1
+    # move = None
+    # for x,y in moves(game, player):
+    #     game1 = game.clone_play(x,y)
 
-        heur = heuristic(game1,player)
-        if heur <current_score or current_score ==-1:
-            current_score = heur
-            move = (x,y)
-
-    return move
+    #     heur = heuristic(game1,player)
+    #     if heur <current_score or current_score ==-1:
+    #         current_score = heur
+    #         move = (x,y)
+    # return move
+    return minimax(game, player, 3, heuristic, moves)
 
 
 def moves(game, player):
